@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: hello-gitops-dev
+resources:
+  - namespace.yaml
+  - ../../apps/nginx
+commonLabels:
+  app.kubernetes.io/part-of: hello-gitops
+  app.kubernetes.io/managed-by: flux
